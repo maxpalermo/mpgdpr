@@ -130,11 +130,15 @@ class MpGdprObjectModelTown extends ObjectModelCore
 
     public static function getTownName($id_town)
     {
-        if (!(int)$id_town) {
+        $int_id_town = (int)$id_town;
+        PrestaShopLoggerCore::addLog('(int)id city ('.$id_town.'): '.$int_id_town);
+        if ($int_id_town == 0) {
             return  $id_town;
         }
         $db = Db::getInstance();
         $sql = "select `name` from "._DB_PREFIX_."mp_town where id_mp_town=".(int)$id_town;
-        return $db->getValue($sql);
+        $town = $db->getValue($sql);
+        PrestaShopLoggerCore::addLog('return city: '.$town);
+        return $town;
     }
 }

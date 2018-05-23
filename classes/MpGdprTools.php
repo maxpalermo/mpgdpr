@@ -343,7 +343,6 @@ Class MpGdprTools
         $delivery->deleted = 0;
         $delivery->id_country = (int)$account['address_delivery']['id_country'];
         $delivery->id_state = (int)$account['address_delivery']['id_state'];
-        $delivery->city = $account['address_delivery']['id_city']?(int)$account['address_delivery']['id_city']:(int)$account['address_delivery']['id_city_text'];
         $delivery->id_customer = (int)$customer->id;
         $delivery->id_manufacturer = 0;
         $delivery->id_supplier = 0;

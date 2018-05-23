@@ -23,10 +23,6 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-<pre>
-	{$cart|print_r}
-</pre>
-
 {if !$opc}
 	{capture name=path}{l s='Shipping:'}{/capture}
 	{assign var='current_step' value='shipping'}
